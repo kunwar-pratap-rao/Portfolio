@@ -131,16 +131,12 @@
   .section-title p{color:var(--ink-soft); margin:0; font-size:1rem;}
 
   /* ---------- About ---------- */
-  .about-grid{display:grid; grid-template-columns:.8fr 1.2fr; gap:60px; align-items:start;}
-  .about-photo{
-    border-radius:12px; overflow:hidden; border:1px solid var(--line); aspect-ratio:4/5;
-    background:var(--bg-panel-2);
-  }
-  .about-photo img{width:100%; height:100%; object-fit:cover; object-position:center 12%;}
+  .about-grid{display:block; max-width:720px; margin:0 auto; text-align:center;}
   .about-copy h3{font-family:var(--serif); font-size:1.5rem; font-weight:600; margin:0 0 18px 0;}
-  .about-copy p{color:var(--ink-soft); margin:0 0 16px 0;}
-  .facts{display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:10px; overflow:hidden; margin-top:30px;}
-  .fact{background:var(--bg-panel); padding:18px 20px;}
+  .about-copy p{color:var(--ink-soft); margin:0 auto 16px auto; max-width:640px;}
+  .about-side{margin-top:34px;}
+  .facts{display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:10px; overflow:hidden;}
+  .fact{background:var(--bg-panel); padding:18px 20px; text-align:center;}
   .fact strong{display:block; font-family:var(--mono); font-size:.7rem; text-transform:uppercase; letter-spacing:1.5px; color:var(--ink-faint); margin-bottom:6px;}
   .fact span{font-size:.98rem; font-weight:600;}
 
@@ -278,10 +274,9 @@
   footer p{color:var(--ink-faint); font-size:.85rem; margin:0;}
 
   @media (max-width:900px){
-    .hero-grid, .about-grid, .contact-grid{grid-template-columns:1fr;}
+    .hero-grid, .contact-grid{grid-template-columns:1fr;}
     .hero{padding-top:150px;}
     .hero-photo{max-width:340px; margin:0 auto;}
-    .about-photo{max-width:340px; margin:0 auto;}
     .skill-grid, .project-grid, .cert-grid, .ach-grid{grid-template-columns:1fr;}
     .two-col{grid-template-columns:1fr;}
     .navlinks{
@@ -302,11 +297,12 @@
     <ul class="navlinks" id="navlinks">
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="#resume">Resume</a></li>
       <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#certificates">Certificates</a></li>
       <li><a href="#achievements">Achievements</a></li>
-      <li><a href="#resume">Resume</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -333,20 +329,35 @@
 
 <section id="about">
   <div class="wrap about-grid">
-    <div class="about-photo reveal">
-      <img src="images/profile.jpg" alt="Kunwar Pratap Rao">
-    </div>
     <div class="about-copy reveal">
       <div class="overline">A little about me</div>
       <h3>Future AI-ML Engineer in progress.</h3>
       <p>I am pursuing a B.Tech in Computer Science and Engineering with a specialization in Artificial Intelligence and Machine Learning. At this stage of my journey, I'm focused on strengthening my programming fundamentals, problem-solving skills, and understanding of AI.</p>
       <p>I enjoy learning through practical projects and exploring how software can be used to solve real-world problems. My current focus areas include DSA, Computer Networks, and AI foundations.</p>
+    </div>
+    <div class="about-side reveal">
       <div class="facts">
         <div class="fact"><strong>Education</strong><span>B.Tech CSE (AI-ML)</span></div>
         <div class="fact"><strong>University</strong><span>Lovely Professional University</span></div>
         <div class="fact"><strong>CGPA</strong><span>7.81</span></div>
         <div class="fact"><strong>Location</strong><span>Phagwara, Punjab, India</span></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="resume">
+  <div class="wrap">
+    <div class="section-title reveal">
+      <div class="overline">Career document</div>
+      <h2>Resume</h2>
+    </div>
+    <div class="resume-note reveal" style="text-align:left; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;">
+      <div>
+        <strong>Kunwar Pratap Rao — CV</strong>
+        <span style="color:var(--ink-soft); font-size:.92rem;">Word document (.docx) · updated regularly as I grow my experience.</span>
+      </div>
+      <a href="files/Kunwar-Pratap-Rao-CV.docx" download class="btn btn-primary">Download CV</a>
     </div>
   </div>
 </section>
@@ -414,33 +425,31 @@
     <div class="project-grid">
       <article class="project-card reveal">
         <div class="project-thumb">
-          <span class="project-badge">ML</span>
+          <span class="project-badge">IoT</span>
           <svg viewBox="0 0 600 210" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <linearGradient id="barGrad" x1="0" y1="1" x2="0" y2="0">
-                <stop offset="0%" stop-color="#5B8DEF" stop-opacity="0.25"/>
-                <stop offset="100%" stop-color="#5B8DEF" stop-opacity="0.85"/>
+              <linearGradient id="pulseGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#5B8DEF" stop-opacity="0.15"/>
+                <stop offset="100%" stop-color="#5B8DEF" stop-opacity="0.9"/>
               </linearGradient>
             </defs>
-            <g>
-              <rect x="80"  y="140" width="34" height="45" rx="4" fill="url(#barGrad)"/>
-              <rect x="150" y="115" width="34" height="70" rx="4" fill="url(#barGrad)"/>
-              <rect x="220" y="95"  width="34" height="90" rx="4" fill="url(#barGrad)"/>
-              <rect x="290" y="70"  width="34" height="115" rx="4" fill="url(#barGrad)"/>
-              <rect x="360" y="48"  width="34" height="137" rx="4" fill="url(#barGrad)"/>
-              <rect x="430" y="60"  width="34" height="125" rx="4" fill="url(#barGrad)" opacity="0.5"/>
+            <rect x="80" y="55" width="100" height="100" rx="14" fill="none" stroke="#5B8DEF" stroke-width="2.5" opacity="0.9"/>
+            <text x="130" y="112" text-anchor="middle" font-family="monospace" font-size="16" fill="#5B8DEF" opacity="0.85">ESP32</text>
+            <polyline points="200,105 235,105 250,70 265,140 280,105 300,105 315,80 330,105 470,105" fill="none" stroke="url(#pulseGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="330" cy="105" r="5" fill="#E5A73E"/>
+            <g transform="translate(430,40)">
+              <path d="M18 0 L23 13 L36 18 L23 23 L18 36 L13 23 L0 18 L13 13 Z" fill="#E5A73E"/>
             </g>
-            <polyline points="97,138 167,112 237,92 307,66 377,44" fill="none" stroke="#E5A73E" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="3 7"/>
-            <circle cx="377" cy="44" r="6.5" fill="#E5A73E"/>
-            <circle cx="377" cy="44" r="12" fill="none" stroke="#E5A73E" stroke-width="1.5" opacity="0.5"/>
-            <line x1="60" y1="185" x2="470" y2="185" stroke="#262C39" stroke-width="1.5"/>
+            <circle cx="500" cy="105" r="26" fill="none" stroke="#5B8DEF" stroke-width="2.5" opacity="0.85"/>
+            <circle cx="500" cy="105" r="4" fill="#5B8DEF"/>
+            <line x1="60" y1="185" x2="540" y2="185" stroke="#262C39" stroke-width="1.5"/>
           </svg>
         </div>
         <div class="project-body">
-          <div class="project-label">Python · AI-ML Foundations</div>
-          <h3>Student Performance Predictor</h3>
-          <p>A beginner machine-learning project concept that uses student study patterns such as study hours, attendance, and previous scores to estimate an academic performance category.</p>
-          <span class="tag">Python</span><span class="tag">Data Analysis</span><span class="tag">Machine Learning</span>
+          <div class="project-label">ESP32 · IoT · AI-Based Health Monitoring</div>
+          <h3>AI-Based Health Monitoring System</h3>
+          <p>An IoT health-monitoring device built on ESP32 that reads live data from a heart rate sensor, a temperature sensor, and a GPS module. When it detects an abnormal reading, it automatically sends an alert message to our website and suggests a doctor to consult, so health issues can be caught early.</p>
+          <span class="tag">ESP32</span><span class="tag">Heart Rate Sensor</span><span class="tag">Temperature Sensor</span><span class="tag">GPS Module</span>
         </div>
       </article>
       <article class="project-card reveal">
@@ -532,22 +541,6 @@
         <h3>C Problems</h3>
         <p>Solved on the NeoCoLab platform.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<section id="resume">
-  <div class="wrap">
-    <div class="section-title reveal">
-      <div class="overline">Career document</div>
-      <h2>Resume</h2>
-    </div>
-    <div class="resume-note reveal" style="text-align:left; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;">
-      <div>
-        <strong>Kunwar Pratap Rao — CV</strong>
-        <span style="color:var(--ink-soft); font-size:.92rem;">Word document (.docx) · updated regularly as I grow my experience.</span>
-      </div>
-      <a href="files/Kunwar-Pratap-Rao-CV.docx" download class="btn btn-primary">Download CV</a>
     </div>
   </div>
 </section>
